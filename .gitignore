@@ -16,3 +16,25 @@ irrelevant/.ipynb_checkpoints/
 irrelevant/.python-version
 
 .idea/
+
+
+# configuration and readme
+!.gitignore
+!.gitpod.yml
+!.gitpod.Dockerfile
+!learn.json
+!README.md
+
+# exercises
+!.learn/
+!.learn/*
+.learn/_app
+.learn/.session
+.learn/dist
+.learn/app.tar.gz
+.learn/config.json
+
+# python compiled files
+*.pyc
+__pycache__/
+.pytest_cache/
