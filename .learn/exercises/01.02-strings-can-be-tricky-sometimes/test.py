@@ -1,6 +1,7 @@
 import io, sys, pytest, os, re
 path = os.path.dirname(os.path.abspath(__file__))+'/app.py'
 
+
 @pytest.mark.it('You should create a variable named a')
 def test_variable_exists(app):
     import app
@@ -21,24 +22,21 @@ def test_variable_equals_5(app):
 def test_function_exists(app):
     with open(path, 'r') as content_file:
         content = content_file.read()
-        regex = re.compile(r"/^[a-z]*\s*\(\s*[a-z]*\s*\(\s*a\s*\)\s*\)\s*")
+        regex = re.compile(r"\bprint\b\s*\(\s*\bid\b\s*\(\s*a\s*\)\s*\)\s*")
         assert bool(regex.search(content)) == True
 
-@pytest.mark.it('The printed value on the console should be correct id for both the value of a and the concatenation of its value')
+@pytest.mark.it('You should use method "id" and it should be called with the value of "a" concatenated')
+def test_function_exists_with_concat(app):
+    with open(path, 'r') as content_file:
+        content = content_file.read()
+        regex = re.compile(r"id\s*\(\s*\"some\"\s*\+\s*\"_\"\s*\+\s*\"string\"\s*\)")
+        assert bool(regex.search(content)) == True
+
+@pytest.mark.it('The printed value on the console should be correct id for both the value of a and the resultant value of its concatenation')
 def test_for_file_output(capsys, app):
+    app()
     import app
-    aID = id(app.a)
-    concatID = id("some" + "_" + "string")
     captured = capsys.readouterr()
-    if aID == concatID:
-        for i in range(2):
-            assert (str(aID) + "\n")  == captured.out
-
-# @pytest.mark.it('Method id should should have been called with variable a')
-# def test_method_called_with_a(app):
-#     try:
-#         assert app.id.assert_called_with(app.a)
-#     except AttributeError:
-#         raise AttributeError('The function "myFunction" should exists')
-
+    toCompare = str(id(app.a)) + "\n" + str(id("some" + "_" + "string")) + "\n"
+    assert toCompare == captured.out
 
