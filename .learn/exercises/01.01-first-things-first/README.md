@@ -1,4 +1,4 @@
-# `01.1` First things first!
+# `01.01` First things first!
 The Walrus operator (:=) was introduced in Python 3.8, it can be useful in situations where you'd want to assign values to variables within an expression.
 
 ## Instructions 🗒
