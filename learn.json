@@ -1,0 +1,35 @@
+{
+  "port": 3000,
+  "editor": {
+    "mode": null,
+    "agent": null,
+    "version": null
+  },
+  "dirPath": "./.learn",
+  "configPath": "./learn.json",
+  "outputPath": "./.learn/dist",
+  "publicPath": "/preview",
+  "publicUrl": null,
+  "contact": "https://github.com/learnpack/learnpack/issues/new",
+  "language": "auto",
+  "autoPlay": true,
+  "grading": "isolated",
+  "exercisesPath": ".learn/exercises",
+  "webpackTemplate": null,
+  "disableGrading": false,
+  "disabledActions": [],
+  "actions": ["Build"],
+  "entries": {
+    "html": "index.html",
+    "vanillajs": "index.js",
+    "react": "app.jsx",
+    "node": "app.js",
+    "python3": "app.py",
+    "java": "app.java"
+  },
+  "difficulty": "easy",
+  "duration": 1,
+  "description": "collection of python problems",
+  "title": "wtfpython",
+  "slug": "wtfpython"
+}
