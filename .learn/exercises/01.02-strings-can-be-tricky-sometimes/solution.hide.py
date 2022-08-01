@@ -1,6 +1,5 @@
 # your code here
-def some_func():
-    return 5
+a = "some_string"
 
-if a:=some_func():
-    print(a)
+print(id(a))
+print(id("some" + "_" + "string"))
